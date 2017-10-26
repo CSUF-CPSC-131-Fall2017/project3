@@ -1,0 +1,5 @@
+a legal word and another period. comma, colon: semicolon;  
+(open parenthesis closed parenthesis)
+"opening double quote closing double quote"
+'opening single quote closing single quote'
+Num9ber OK da-sh Good

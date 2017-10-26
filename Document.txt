@@ -1,0 +1,63 @@
+CPSC-131 Project 3:
+Document Index
+This project is different from the previous two, where you were given skeleton classes with member functions to complete. Its goal is for you to become familiar with the use of the binary search tree by using the Standard Library (SL) implementation of this container: the STL map. It requires you to use existing SL classes to solve a problem, not to fill in the members of those classes as previous projects have done. The project files provide one class, DocumentIndex, with member functions that you must complete.
+Application
+The project requires the design and implementation of an application program that creates a page index for a text document. The index must have one line for each word in the document, with a list of page numbers following the word in that line. Here is a sample:
+Class 12, 34, 56
+WarningBe very careful about the format of the lines in your output file.Your index file will be checked by a program that expects the format of the file's lines to conform to the example shown-a single word, a space, a set of numbers separated by a comma and a space.
+A nonconforming format will cause a test to fail.Document pages are separated by two successive empty lines, created by pressing Return twice after the Return that ends a paragraph. Here is an illustration:
+Last line of a page
+
+
+First line of next page
+Words are separated by spaces, tabs, and punctuation, which may be:
+period (.)
+comma (,)
+colon (:)
+semicolon (;)
+question mark (?)
+exclamation point (!)
+The punctuation should not appear in the index.
+Words can end with a possessive-an apostrophe followed by an s. The index must contain the word without the 's.
+Word that contain digits or symbols other those mentioned above must not appear in the index.
+
+
+Words can begin with opening double or single quotation marks, or parentheses; they can end with the corresponding closing character. These marks may enclose a string of words, not just a single word. You do not have to check for matching pairs; you only have strip them off like other punctuation. The marks should not appear in the index. Enclosed words, after the marks are stripped, are subject to the other constraints. For example, the word "Room-131" is not a legal word because of the hyphen and the digits.
+If a word appears more than once on a page, the page number must appear only once in the index.
+Words in the exception file must not appear in the index.
+Words that appear more than ten times in the document must not appear in the index.
+The words in the index must appear in sorted order and the page numbers for each word must appear in sorted order.
+Classes and Functions
+The document index program must have a DocumentFile class and a DocumentIndex class with the indicated functions:
+DocumentFile
+* Close: Close the document file after it's been used. This function's code will be provided to you.
+* GetWord: Return the next legal word from the document file, stripping out the allowable punctuation and  skipping over the illegal words (those with disallowed characters).
+* GetPageNumber: Return the current page number.
+* LoadExceptions: Load the word exception list from a file, given the file's name.
+* Open: Open the document file, given its name. This function's code will be provided to you.
+* Read: Read the next line of the document file; update the page number if appropriate.
+DocumentIndex
+* Create: Create the index from the document file.
+* Write: Write the index to a file.
+This list is a summary; the documentindex.h file contains a complete declaration of the classes and the documentindex.cpp file contains definitions of the functions-some skeletons for you to complete and some provided for you to use without having to change them.
+Implementation
+You are to use the Standard Library (SL) map class to hold index information. You may find it necessary to use other SL containers within the map's data elements.
+Remember that the nodes of a tree, which is the structure that the SL map implements, are key/data pairs. The map's insert function takes a key and an associated data element, which can be anything, including a class or structure. The structure can have anything as a member, including other SL containers.
+
+
+Resources
+These files will be posted on GitHub for you to download, use or modify, and submit:
+* documentindex.h: contains declarations of th DocumentIndex class.You may add other declarations as needed for your implementation. Do not add definitions (code) to this file; definitions of functions belong in documentindex.cpp.
+* documentindex.cpp: contains skeletons for the required member functions, either completely empty or partially filled in. You may add other functions, member and nonmember, as needed for your implementation.
+* document.txt: contains a large multipage document to be used as input for the CreateIndex function.
+* exceptions.txt: contains a list of words, one per file line,  to be used as input for the LoadExceptions function.
+* index.txt: contains a sample index file, created when the document.txt and exceptions.txt files are used as inputs.
+* main.cpp: contains a set of test functions that will call DocumentIndex's functions. Do not modify this file. Do not submit this file as part of your project; a controlled version will be used to test your submission.
+* pages.txt: contains a small document that is primarily a set of pages; it can be used to test the "next page" detection function.
+* words.txt: contains a small document that is simply a collection of legal words, including some with legal punctuation and some with illegal characters such as numbers and symbols; it can be used to test the GetWord function.
+All of the input files-exceptions.txt, document.txt, pages.txt, and words.txt-are samples; your final submission will be tested using different files.
+A brief description of the relevant map functions-insert, find, erase-is provided in the map.pdf file, including how to insert a key/data pair.
+You may find the SL set to be a container of interest. A brief description of its relevant functions-insert and size-is provided in the set.pdf file.
+A more extension description of the SL classes and their functions can be found at www.cplusplus.com.
+2
+
