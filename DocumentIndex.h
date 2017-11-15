@@ -1,6 +1,6 @@
 #ifndef	DocumentIndex_h
 #define	DocumentIndex_h
-
+//
 #include	<fstream>
 #include	<map>
 #include	<set>
