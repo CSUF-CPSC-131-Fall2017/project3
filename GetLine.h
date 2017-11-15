@@ -1,6 +1,6 @@
 #ifndef GetLine_h
 #define GetLine_h
-//
+
 //****************************************************************************************
 //	INCLUDE FILES
 #include	<iostream>
