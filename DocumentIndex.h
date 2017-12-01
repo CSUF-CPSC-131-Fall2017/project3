@@ -1,6 +1,6 @@
 #ifndef	DocumentIndex_h
 #define	DocumentIndex_h
-//
+
 #include	<fstream>
 #include	<map>
 #include	<set>
@@ -44,6 +44,8 @@ public:
                                                 //	the double empty lines that mark page separations.
                                                 //	Returns false if there are no more lines in the file.
     
+    string  text_;
+
     
 private:
     
@@ -53,9 +55,7 @@ private:
     fstream         file_;
     int             pageNumber_;
     int             page_ = 0;
-    string          text_;
-    vector <string> line_;
-    
+       
 };
 
 class	DocumentIndex
@@ -72,4 +72,3 @@ private:
 };
 
 #endif
-
